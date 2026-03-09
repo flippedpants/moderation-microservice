@@ -1,14 +1,11 @@
 from pydantic import BaseModel
 
-
 class ModerateRequest(BaseModel):
     text: str
 
-
 class ModerateResponse(BaseModel):
     text: str
-    flagged: bool
+    scores: dict[str,float]
     labels: list[str]
-    scores: dict[str, float]
-    label: str
+    flagged: bool
     confidence: float
